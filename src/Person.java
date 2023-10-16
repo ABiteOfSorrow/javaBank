@@ -8,6 +8,10 @@ public class Person {
         name = pName;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setAge(int pAge) {
         age = pAge;
     }
@@ -27,4 +31,13 @@ public class Person {
     public void setAccount(BankAccount pAccount) {
         account = pAccount;
     }
+
+    public boolean transfer(Person to, int amount) {
+       return account.transfer(to.getAccount(), amount);
+    }
+
+    public boolean transfer(BankAccount to, int amount) {
+       return account.transfer(to, amount);
+    }
+
 }
