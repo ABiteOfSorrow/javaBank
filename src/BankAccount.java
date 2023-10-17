@@ -18,6 +18,28 @@ public class BankAccount {
         owner = pOwner;
     }
 
+    public BankAccount(int pBalance) {
+        if (pBalance < 0) {
+            balance = 0;
+        } else {
+            balance = pBalance;
+        }
+    }
+
+    public BankAccount(Person pOwner) {
+        owner = pOwner;
+        balance = 0;
+    }
+
+    public BankAccount(int pBalance, Person pOwner) {
+        if (pBalance < 0) {
+            balance = 0;
+        } else {
+            balance = pBalance;
+        }
+        owner = pOwner;
+    }
+
     boolean deposit(int amount) {
         // 1. write code here
         if (amount > 0 && owner.getCashAmount() - amount >= 0) {
